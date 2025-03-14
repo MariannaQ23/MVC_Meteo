@@ -1,0 +1,94 @@
+﻿@model ModelliMeteo.RootMeteo
+
+@{
+    Layout = null;
+}
+@{
+    ViewData["Title"] = "Meteo";
+}
+
+<htmml>
+<body>
+   
+        <label id="nomeLocalitaSelezionata">Seleziona Località</label>
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Località</label>
+            <select class="custom-select" id="menuLocalita">
+                @foreach (var local in Model.previsione)
+                {
+                    <option value="@local.localita">@local.localita</option>
+                }
+            </select>
+        </div>
+
+
+    
+        @foreach(var local in Model.previsione)
+        {
+            <div id = "giorniLocalita_@local.localita" style = "display: none;" >
+            @foreach(var giorno in local.giorni)
+            {
+                <div >
+                    @DateTime.Parse(@giorno.giorno).ToString("dddd, dd MMMM yyyy")
+                    <p>
+                        <img src="@giorno.icona" />
+                        <button>
+                                <a asp-area="" asp-controller="Meteo" asp-action="DettaglioMeteo" asp-route-localita="@local.localita" asp-route-idPrevisione="@giorno.idPrevisioneGiorno">Maggiori dettagli</a>
+                        </button>
+                        <button>
+                                <a asp-area="" asp-controller="SOAP" asp-action="RicercaPerGiorno" asp-route-localita="@local.localita" asp-route-gCercato="@giorno.idPrevisioneGiorno">Soap Request</a>
+                        </button>
+                    </p>
+                    <p>
+                        <label>Min:@giorno.tMinGiorno °C</label> <br/>
+                        <label>Max:@giorno.tMaxGiorno °C</label>
+                    </p>
+
+                    <p>@giorno.testoGiorno</p>
+
+                <hr/>
+                </div>
+            }
+            </div>
+        }
+</body>
+</htmml>
+
+
+
+<script>
+    var menuLocalita = document.getElementById('menuLocalita');
+    var nomeLocalitaSelezionata = document.getElementById('nomeLocalitaSelezionata');
+
+    menuLocalita.addEventListener('change', function() {
+        var localitaSelezionata = menuLocalita.options[menuLocalita.selectedIndex].value;
+
+        // Aggiorna il nome della località selezionata
+        nomeLocalitaSelezionata.textContent = '\n' + localitaSelezionata;
+
+        // Nascondi tutti i giorni prima di mostrarne solo quelli della località selezionata
+        var tuttiIGiorni = document.querySelectorAll('[id^="giorniLocalita_"]');
+        tuttiIGiorni.forEach(function(giorni) {
+            giorni.style.display = 'none';
+        });
+
+        // Mostra i giorni solo per la località selezionata
+        var giorniLocalitaSelezionata = document.getElementById('giorniLocalita_' + localitaSelezionata);
+        if (giorniLocalitaSelezionata) {
+            giorniLocalitaSelezionata.style.display = 'block';
+        }
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+                    

@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  mvc_meteo:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "1111:80"
+
+  soap:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "2222:80"
+

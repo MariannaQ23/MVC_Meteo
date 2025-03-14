@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  mvc_meteo:
+    image: ${DOCKER_REGISTRY-}mvcmeteo
+    build:
+      context: .
+      dockerfile: MVC_Meteo/Dockerfile
+    ports:
+        - 1111:80
+
+  soap:
+    image: ${DOCKER_REGISTRY-}soap
+    build:
+      context: .
+      dockerfile: Soap/Dockerfile
+    ports:
+        - 2222:80
+

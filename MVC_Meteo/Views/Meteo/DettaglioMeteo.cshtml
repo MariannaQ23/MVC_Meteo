@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+    <body>
+         <form action="/Meteo/DettaglioMeteo"method="get">
+        <h1>Previsioni per <font color="midnightblue">@Model.localita </font> di <font color="midnightblue">@DateTime.Parse(@Model.giorno).ToString("dddd, dd MMMM yyyy")</font></h1>
+            <br />
+
+                <table >
+                    <thead>
+                        <tr>
+                            <th> Fascia Oraria</th>
+                            <th> Icona</th>
+                            <th> Condizione Meterologica </th>
+                            <th> Probabilità Precipitazioni </th>
+                            <th> Intensità Precipitazioni </th>
+                            <th> Intensità Vento in Quota </th>
+                            <th> Densità Vento in Quota </th>
+                            <th> Intensità Vento in Valle </th>
+                            <th> Densità Vento in Valle </th>
+                            <th> Icona Vento in Quota </th>
+                        </tr>
+                    </thead>
+
+            <tbody >
+                    @foreach(var fascia in Model.fasce)
+                    {
+                        <tr>
+                            <td> @fascia.fasciaOre </td>
+                            <td> <img src="@fascia.icona" /> </td>
+                            <td> @fascia.descIcona </td>
+                            <td> @fascia.descPrecProb </td>
+                            <td> @fascia.descPrecInten </td>
+                            <td> @fascia.descVentoIntQuota </td>
+                            <td> @fascia.descVentoDirQuota </td>
+                            <td> @fascia.descVentoIntValle </td>
+                            <td> @fascia.descVentoDirValle </td>
+                            <td> <img src="@fascia.iconaVentoQuota" /> </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </form>
+    </body>
+</html>
+
+
+<style>
+    th, td {
+        text-align: center;
+    }
+</style>

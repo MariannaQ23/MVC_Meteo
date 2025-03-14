@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC_Meteo", "MVC_Meteo\MVC_Meteo.csproj", "{741A129B-D63A-4668-81B0-92023C6A9D2D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C47F208A-F5F3-4493-91E2-E29E8916659E} = {C47F208A-F5F3-4493-91E2-E29E8916659E}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelliMeteo", "ModelliMeteo\ModelliMeteo.csproj", "{433A3C91-7A6C-4A1F-93C2-2C90A0886FF0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiziMeteo", "ServiziMeteo\ServiziMeteo.csproj", "{5ED4D919-7D1C-4E61-9A41-8695B7F6BD22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SOAP", "Soap\SOAP.csproj", "{C47F208A-F5F3-4493-91E2-E29E8916659E}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{46B3F163-0400-4825-9DE3-1BD0A16160BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{741A129B-D63A-4668-81B0-92023C6A9D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{741A129B-D63A-4668-81B0-92023C6A9D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{741A129B-D63A-4668-81B0-92023C6A9D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{741A129B-D63A-4668-81B0-92023C6A9D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{433A3C91-7A6C-4A1F-93C2-2C90A0886FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{433A3C91-7A6C-4A1F-93C2-2C90A0886FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{433A3C91-7A6C-4A1F-93C2-2C90A0886FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{433A3C91-7A6C-4A1F-93C2-2C90A0886FF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ED4D919-7D1C-4E61-9A41-8695B7F6BD22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ED4D919-7D1C-4E61-9A41-8695B7F6BD22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ED4D919-7D1C-4E61-9A41-8695B7F6BD22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ED4D919-7D1C-4E61-9A41-8695B7F6BD22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C47F208A-F5F3-4493-91E2-E29E8916659E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47F208A-F5F3-4493-91E2-E29E8916659E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47F208A-F5F3-4493-91E2-E29E8916659E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47F208A-F5F3-4493-91E2-E29E8916659E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B3F163-0400-4825-9DE3-1BD0A16160BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B3F163-0400-4825-9DE3-1BD0A16160BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B3F163-0400-4825-9DE3-1BD0A16160BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B3F163-0400-4825-9DE3-1BD0A16160BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F935EB8B-FB0E-4BB0-95D0-E2FA60A8DD1A}
+	EndGlobalSection
+EndGlobal
