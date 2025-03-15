@@ -47,7 +47,7 @@ namespace ServiziMeteo
 
 
 
-        public ModelliMeteo.Giorni SOAPRicercaPerGiorno(string localita, int gCercato)
+        public async Task<ModelliMeteo.Giorni> SOAPRicercaPerGiorno(string localita, int gCercato)
         {
             var giorno = new ModelliMeteo.Giorni();
             ServiceReference1.ISoapService soapServiceChannel = new SoapServiceClient(SoapServiceClient.EndpointConfiguration.BasicHttpBinding_ISoapService_soap);
@@ -61,7 +61,7 @@ namespace ServiziMeteo
                     giorno = gCercato
                 }
             };
-            RicercaPerGiornoResponse response = soapServiceChannel.RicercaPerGiornoAsync(request).Result;
+            RicercaPerGiornoResponse response = await soapServiceChannel.RicercaPerGiornoAsync(request);
 
             //conversione del tipo del servizio soap nel tipo per l'applicazione
             return Converter(response.Body.RicercaPerGiornoResult);

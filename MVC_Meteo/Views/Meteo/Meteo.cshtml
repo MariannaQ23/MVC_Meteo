@@ -10,9 +10,8 @@
 <htmml>
 <body>
    
-        <label id="nomeLocalitaSelezionata">Seleziona Località</label>
+        <h1><label id="nomeLocalitaSelezionata">Seleziona Località</label></h1>
         <div class="input-group mb-3">
-            <label class="input-group-text" for="inputGroupSelect01">Località</label>
             <select class="custom-select" id="menuLocalita">
                 @foreach (var local in Model.previsione)
                 {
@@ -34,9 +33,6 @@
                         <img src="@giorno.icona" />
                         <button>
                                 <a asp-area="" asp-controller="Meteo" asp-action="DettaglioMeteo" asp-route-localita="@local.localita" asp-route-idPrevisione="@giorno.idPrevisioneGiorno">Maggiori dettagli</a>
-                        </button>
-                        <button>
-                                <a asp-area="" asp-controller="SOAP" asp-action="RicercaPerGiorno" asp-route-localita="@local.localita" asp-route-gCercato="@giorno.idPrevisioneGiorno">Soap Request</a>
                         </button>
                     </p>
                     <p>

@@ -7,12 +7,10 @@ namespace MVC_Meteo.Controllers
 {
     public class SOAPController: Controller
     {
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> RicercaPerGiorno(string localita, int gCercato)
         {
-            var service = new ServiziMeteo.ServiziMeteo();
-
-            Giorni giorno = service.SOAPRicercaPerGiorno(localita, gCercato);
+            Giorni giorno = await ServiziMeteo.ServiziMeteo.DettaglioMeteo(localita, gCercato);
 
             return View(giorno);
       
